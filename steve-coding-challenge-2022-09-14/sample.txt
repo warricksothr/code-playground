@@ -1,5 +1,1 @@
-hat
-abc
-Zu6
-T
-AA
+hat abc Zu6 T AA

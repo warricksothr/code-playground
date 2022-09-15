@@ -137,13 +137,13 @@ def permutate(list_item):
         inputs| list_item: the item desired to be permutated"""
 ```
 
-I would recommend prettifying them a bit and limiting the individual line length to <90 characters for readability in terminals. <80 is the "standard" but <90 is more ergonomic. Also the PEP8 style guide has recommendations for Documentation Strings https://peps.python.org/pep-0008/#documentation-strings.
+I would recommend prettifying them a bit and limiting the individual line length to <90 characters for readability in terminals. <73 is the "standard" but <90 is more ergonomic. Also the PEP8 style guide has recommendations for Documentation Strings https://peps.python.org/pep-0008/#documentation-strings.
 
 ```python
 def permutate(list_item):
     """Generate the permutations for the provided list
 
-    Takes a string and creates all possible permutations of the individual characters 
+    Takes a string and creates all possible permutations of the individual characters
     rearranged. Additionally, it sorts the generated permuations into alphabetical
     order. The function also eliminates duplicate permutations.
     
@@ -164,7 +164,17 @@ Complex or confusing code is at least partially documented and this helps the re
 
 - Your program should accept a file as its first argument
 
-The code above does not accept an argument to defined the path to the input file.
+The code above does not read an argument to determine the path to the input file. An example implementation of this can be as simple as 
+
+```python
+    file_path = sys.argv[1] if len(sys.argv) > 1 else None
+```
+
+Or more ergonomically
+
+```python
+
+```
 
 - The code imposes an additional restriction of only accepting a CSV file
 

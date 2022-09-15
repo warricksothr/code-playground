@@ -48,12 +48,14 @@ def main(file_path: str, use_itertools: bool):
         file_lines = [line.strip() for line in file.readlines() if len(line) > 0]
 
     for line in file_lines:
-        line_permutations: List[str]
-        if use_itertools:
-            line_permutations = get_itertools_permutations(line)
-        else:
-            line_permutations = get_permutations(line)
-        print(",".join(line_permutations))
+        line_parts = list(line.split(" "))
+        for line_part in line_parts:
+            line_permutations: List[str]
+            if use_itertools:
+                line_permutations = get_itertools_permutations(line_part)
+            else:
+                line_permutations = get_permutations(line_part)
+            print(",".join(line_permutations))
 
 
 if __name__ == "__main__":

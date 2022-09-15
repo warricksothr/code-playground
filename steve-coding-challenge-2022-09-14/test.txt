@@ -1,8 +1,2 @@
-hat
-abc
-Zu6
-T
-AA
-!sab
-df1
-F!2
+hat abc Zu6 T AA
+!ab df1 F!2 a,c
