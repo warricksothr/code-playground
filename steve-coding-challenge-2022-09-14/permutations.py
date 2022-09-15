@@ -3,6 +3,7 @@
 import argparse
 import itertools
 
+from os.path import exists
 from typing import List
 
 
@@ -23,6 +24,9 @@ def determine_permutations(characters: List[str], base_string: str = "") -> List
     if len(characters) < 1:
         return [base_string]
     else:
+        # Recursively get the permutations for every possible starting character given
+        # the input list. Flatten the returned lists into single list through an advanced
+        # list comprehension iterating over each sublist returned by the function call.
         return [
             base_string + permutation
             for index, character in enumerate(characters)
@@ -68,5 +72,8 @@ permutations will be printed in alphabetical order.
     )
     parser.add_argument("file", help="the path to a file with one or more lines")
     args = parser.parse_args()
+
+    if not exists(args.file):
+        parser.error(f"{args.file} does not exist")
 
     main(args.file, args.use_itertools)
