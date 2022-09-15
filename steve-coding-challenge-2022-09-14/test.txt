@@ -1,2 +1,2 @@
 hat abc Zu6 T AA
-!ab df1 F!2 a,c
+!ab a,c df1 F!2
